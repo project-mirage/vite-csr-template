@@ -1,2 +1,2 @@
-export type pages = "Plotter" | "Settings" | "Auth";
+export type pages = "Home" | "Settings" | "Auth";
 

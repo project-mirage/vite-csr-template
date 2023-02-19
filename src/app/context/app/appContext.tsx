@@ -12,12 +12,11 @@ import { useEffect } from "react";
 
 //create context for app of type
 export const AppContext = createContext<appContextType>({
-    currentPage: "Plotter",
+    currentPage: "Home",
     setCurrentPage: () => {},
     pages: [],
-    appRouter: createBrowserRouter([]),
+    appRouter: undefined,
 });
-
 
 //context provider
 
@@ -26,11 +25,11 @@ type Props = {
 };
 
 export default function AppContextProvider({ children }: Props) {
-    const [currentPage, setCurrentPage] = useState<pages>("Plotter");
+    const [currentPage, setCurrentPage] = useState<pages>("Home");
 
     const pages: SideBarItemProps[] = [
         {
-            label: "Plotter",
+            label: "Home",
             icon: <RocketLaunchIcon />,
         },
         {
@@ -48,7 +47,7 @@ export default function AppContextProvider({ children }: Props) {
             element: <Home />,
             children: [
                 {
-                    path: "/Plotter",
+                    path: "/Home",
                     element: <Home />,
                 },
             ],
